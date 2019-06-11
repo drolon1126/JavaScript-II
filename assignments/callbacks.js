@@ -27,6 +27,13 @@ const items = ['Pencil','Pencil', 'Notebook', 'yo-yo', 'Gum'];
 */
 
 
+cb(list.forEach(function(item, list){
+  if(item===list)
+  return true;
+  else return false;
+}))
+
+
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
   return cb(arr.length);

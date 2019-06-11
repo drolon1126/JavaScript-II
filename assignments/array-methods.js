@@ -93,8 +93,60 @@ console.log(ticketPriceTotal);
 //theres a drawing for a raffle where all the people who donated at least 100 get entered for a chance to win
 // a dinner party for their office. Need a array to keep track of all the qualified entrants.
 
+let qualifyDonation = runners.filter(runner=>runner.donation>=100);
+console.log(qualifyDonation);
+
 // Problem 2
-//the fundraiser needs to display a list of all their sponsors in a pamphlet for the event.
+// the fundraiser needs to display a list of all their sponsors in a pamphlet for the event.
 // Get an array of all the company names and sort them alphabetically.
+let allCoNames = (runners.map(runner=>runner.company_name)).sort();
+console.log(allCoNames); 
+
 
 // Problem 3
+// organizers need to figure out how many shirts of each size to order and for who.
+// Get a list of the names of the people ordering each shirt and display how many of them there are.
+
+let xsShirts = runners.filter(runner=>runner.shirt_size==="XS");
+if(xsShirts!==[])
+{
+    console.log(`There are ${xsShirts.length} runners ordering size XS shirts`);
+    console.log(xsShirts);
+}
+let sShirts = runners.filter(runner=>runner.shirt_size==="S");
+if(sShirts!==[])
+{
+    console.log(`There are ${sShirts.length} runners ordering size S shirts`);
+    console.log(sShirts);
+}
+let mShirts = runners.filter(runner=>runner.shirt_size==="M");
+if(mShirts!==[])
+{
+    console.log(`There are ${mShirts.length} runners ordering size M shirts`);
+    console.log(mShirts);
+}
+let lShirts = runners.filter(runner=>runner.shirt_size==="L");
+if(lShirts!==[])
+{
+    console.log(`There are ${lShirts.length} runners ordering size L shirts`);
+    console.log(lShirts);
+}
+let xlShirts = runners.filter(runner=>runner.shirt_size==="XL");
+if(xlShirts!==[])
+{
+    console.log(`There are ${xlShirts.length} runners ordering size XL shirts`);
+    console.log(xlShirts);
+}
+let xlTwoShirts = runners.filter(runner=>runner.shirt_size==="XL2");
+if(xlTwoShirts!==[])
+{
+    console.log(`There are ${xlTwoShirts.length} runners ordering size XL2 shirts`);
+    console.log(xlTwoShirts);
+}
+let xlThreehirts = runners.filter(runner=>runner.shirt_size==="XL3");
+if(xlThreehirts!==[])
+{
+    console.log(`There are ${xlThreehirts.length} runners ordering size XL3 shirts`);
+    console.log(xlThreehirts);
+}
+

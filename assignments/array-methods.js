@@ -90,6 +90,11 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+//theres a drawing for a raffle where all the people who donated at least 100 get entered for a chance to win
+// a dinner party for their office. Need a array to keep track of all the qualified entrants.
+
 // Problem 2
+//the fundraiser needs to display a list of all their sponsors in a pamphlet for the event.
+// Get an array of all the company names and sort them alphabetically.
 
 // Problem 3

@@ -1,6 +1,9 @@
-// A local community center is holding a fund raising 5k fun run and has invited 50 small businesses to make a small donation on their behalf for some much needed updates to their facilities.  Each business has assigned a representative to attend the event along with a small donation.
+// A local community center is holding a fund raising 5k fun run and has invited 50 
+//small businesses to make a small donation on their behalf for some much needed updates to their facilities.  
+//Each business has assigned a representative to attend the event along with a small donation.
 
-// Scroll to the bottom of the list to use some advanced array methods to help the event director gather some information from the businesses.
+// Scroll to the bottom of the list to use some advanced array methods to help the event director 
+//gather some information from the businesses.
 
 const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"cseiler0@wired.com","shirt_size":"2XL","company_name":"Divanoodle","donation":75},
 {"id":2,"first_name":"Whitaker","last_name":"Ierland","email":"wierland1@angelfire.com","shirt_size":"2XL","company_name":"Wordtune","donation":148},
@@ -54,30 +57,96 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
 // ==== Challenge 1: Use .forEach() ====
-// The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
+// The event director needs both the first and last names of each runner for their running bibs.  
+//Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+//fullName = runners.map(runner=>`${runner.first_name} ${runner.last_name}`);
+runners.forEach(runner=>fullName.push(`${runner.first_name} ${runner.last_name}`));
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = [];
+let allCaps = runners.map(runner=>runner.first_name.toUpperCase());
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
-// The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+// The large shirts won't be available for the event due to an ordering issue.  
+// Get a list of runners with large sized shirts so they can choose a different size.
+// Return an array named largeShirts that contains information about the runners that have a shirt size of L 
+// and log the result
+let largeShirts = runners.filter(runner=>runner.shirt_size==="L");
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
-// The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
+// The donations need to be tallied up and reported for tax purposes.
+// Add up all the donations into a ticketPriceTotal array and log the result
+let ticketPriceTotal = runners.reduce((total,cur)=>total + cur.donation,0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce(). 
+// I want you to think of potential problems you could solve given the data set and the 5k fun run theme.
+//  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
 
+//theres a drawing for a raffle where all the people who donated at least 100 get entered for a chance to win
+// a dinner party for their office. Need a array to keep track of all the qualified entrants.
+
+let qualifyDonation = runners.filter(runner=>runner.donation>=100);
+console.log(qualifyDonation);
+
 // Problem 2
+// the fundraiser needs to display a list of all their sponsors in a pamphlet for the event.
+// Get an array of all the company names and sort them alphabetically.
+let allCoNames = (runners.map(runner=>runner.company_name)).sort();
+console.log(allCoNames); 
+
 
 // Problem 3
+// organizers need to figure out how many shirts of each size to order and for who.
+// Get a list of the names of the people ordering each shirt and display how many of them there are.
+
+let xsShirts = runners.filter(runner=>runner.shirt_size==="XS");
+if(xsShirts!==[])
+{
+    console.log(`There are ${xsShirts.length} runners ordering size XS shirts`);
+    console.log(xsShirts);
+}
+let sShirts = runners.filter(runner=>runner.shirt_size==="S");
+if(sShirts!==[])
+{
+    console.log(`There are ${sShirts.length} runners ordering size S shirts`);
+    console.log(sShirts);
+}
+let mShirts = runners.filter(runner=>runner.shirt_size==="M");
+if(mShirts!==[])
+{
+    console.log(`There are ${mShirts.length} runners ordering size M shirts`);
+    console.log(mShirts);
+}
+let lShirts = runners.filter(runner=>runner.shirt_size==="L");
+if(lShirts!==[])
+{
+    console.log(`There are ${lShirts.length} runners ordering size L shirts`);
+    console.log(lShirts);
+}
+let xlShirts = runners.filter(runner=>runner.shirt_size==="XL");
+if(xlShirts!==[])
+{
+    console.log(`There are ${xlShirts.length} runners ordering size XL shirts`);
+    console.log(xlShirts);
+}
+let xlTwoShirts = runners.filter(runner=>runner.shirt_size==="XL2");
+if(xlTwoShirts!==[])
+{
+    console.log(`There are ${xlTwoShirts.length} runners ordering size XL2 shirts`);
+    console.log(xlTwoShirts);
+}
+let xlThreehirts = runners.filter(runner=>runner.shirt_size==="XL3");
+if(xlThreehirts!==[])
+{
+    console.log(`There are ${xlThreehirts.length} runners ordering size XL3 shirts`);
+    console.log(xlThreehirts);
+}
+
